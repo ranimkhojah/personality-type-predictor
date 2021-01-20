@@ -1,0 +1,177 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>16 Personalities</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link href="https://fonts.googleapis.com/css?family=Kanit|Ubuntu&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed|Francois+One|Fredoka+One|Lobster+Two|Poiret+One|Sacramento&display=swap" rel="stylesheet">
+        </head>
+	<body style="background-color: rgb(170, 135, 140)">
+
+        <!-- Navbar -->
+        <div class="navbar">
+            <a href="../">My Personality</a>
+            <a href="../admin/">Admin view</a>
+        </div>
+
+	    <!-- Header -->
+        <header>
+            <h1 class= "title" style="font-family: 'Poiret One', cursive">MBTI Type Predictor</h1>
+            <img alt="header" width= 500 class="center" src="https://i.pinimg.com/originals/5e/80/2f/5e802f87d0e06290bf8ca860ab1d7dca.gif" >
+        </header>
+        <div class="info">
+
+        
+       <p><img class= "align" alt="header" width= 300 src="https://cdn.dribbble.com/users/285475/screenshots/2863164/anya-hindmarch2.gif"> <div class="information"> <h3>What is MBTI?</h3> <p>The Myers–Briggs Type Indicator (MBTI) is an introspective self-report questionnaire indicating differing psychological preferences in how people perceive the world and make decisions.
+        The MBTI sorts some of these psychological differences into four opposite pairs, or "dichotomies", with a resulting 16 possible psychological types. None of these types is "better" or "worse"; however, Briggs and Myers theorized that people innately "prefer" one overall combination of type differences. In the same way that writing with the left hand is difficult for a right-hander, so people tend to find using their opposite psychological preferences more difficult, though they can become more proficient (and therefore behaviorally flexible) with practice and development.
+
+          The 16 types are typically referred to by an abbreviation of four letters. For instance:
+          <ul>
+            <li>  ESTJ: extraversion (E), sensing (S), thinking (T), judgment (J)</li>
+            <li>  INFP: introversion (I), intuition (N), feeling (F), perception (P)</li>
+          </ul>
+        </p>
+        <p style="color:rgb(134, 134, 134)">maybe from wikipedia</p>
+
+        <br> 
+      </div>
+    </p>
+
+      </div>
+      <!--prediction field-->
+          <div class = "input">
+              <h3 style="color:white; font-family: 'Ubuntu', sans-serif; float:left;"> Predict My Personality Type!</h3>
+					<form action="{%url 'prediction:MBTI Predict'%}" method="POST">
+							{% csrf_token %}
+              <textarea class= "text" type="text" name="Post"action="{%url 'prediction:MBTI Result'%}" method="POST" placeholder="Text here" value= '{% if submitbutton == "Submit" %} {{ Post }} {% endif %}'></textarea>
+        </div>
+        <input class="blue-button" type="Submit" name="Submit" value="Predict!" formaction="prediction"/>
+        <br> <br> <br>   <br> <br> <br>   <br> <br> <br>   <br> <br> <br>    <br> <br>    <br> <br> <br>
+        <style>
+          .text{
+            width: 40em;
+            height: 150px;
+            padding: 12px 20px;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            background-color: #f8f8f8;
+            resize: none;
+            
+          }
+          p, li{
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 18px;
+          }
+          h3{
+            padding-top: 1%;
+            font-family: 'Francois One', sans-serif;
+          }
+
+          .information{
+            float: top;
+            margin: 10px;
+          }
+          .align{
+            float: left;
+            display: inline-block;
+            vertical-align: middle;
+          }
+          .info{
+            background-color: rgb(229,229,229);
+          }
+        .title{
+            font-family: 'Ubuntu', sans-serif;
+            text-align: center;
+            padding: 10px 20px;
+
+        }
+        .blue-button {
+            padding: 10px 27px;
+            text-decoration: none;
+            font-size: 16px;
+            margin: 4px 2px;
+            -webkit-transition-duration: 0.4s; /* Safari */
+            transition-duration: 0.4s;
+            cursor: pointer;
+            background-color: rgb(20, 178, 180);
+            color: black; 
+            border: 2px solid rgb(20, 178, 180);
+            top: 67.8em;
+            left: 54em;
+            position: absolute;
+        }
+        .blue-button:hover {
+        text-decoration: line-through;
+      }
+        input[type=text]{
+            width: 60%;
+          padding: 10px 20px;
+          margin: 8px 0;
+          box-sizing: border-box;
+          border: 3px solid #ccc;
+          -webkit-transition: 0.5s;
+          transition: 0.5s;
+          outline: none;
+        }
+
+      input[type=text]:focus {
+
+        border: 2px solid #555;
+      }
+
+
+      .navbar {
+          background-color: rgba(216, 216, 216, 0);
+          overflow: hidden;
+      }
+
+            /* Style the links inside the navigation bar */
+      .navbar a {
+        float: left;
+        color: rgb(255, 255, 255);
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+        font-family: 'Ubuntu', sans-serif;
+      }
+      .centered {
+        text-align: center;
+        position: absolute;
+        font-family: 'Kanit', sans-serif;
+        top: 70%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-family: 'Ubuntu', sans-serif;
+        color: rgb(18, 17, 20);
+      }
+      .input {
+        text-align: center;
+        position: absolute;
+        font-family: 'Kanit', sans-serif;
+        top: 64em;
+        left: 36em;
+        transform: translate(-50%, -50%);
+        font-family: 'Ubuntu', sans-serif;
+        color: rgb(18, 17, 20);
+      }
+
+            /* Change the color of links on hover */
+      .navbar a:hover {
+        text-decoration: line-through;
+        color: rgb(255, 255, 255);
+      }
+      .center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      #header{
+        background-color: #eeeef8;
+      }
+        </style>
+	</body>
+</html>

@@ -1,0 +1,377 @@
+<!DOCTYPE HTML>
+
+<!-- AUTHOR OF THIS FILE: DUY NGUYEN NGOC and RANIM KHOJAH -->
+<!-- RANIM KHOJAH WORKED ON BEAUTIFYING THE UI-->
+<!-- DUY NGUYEN NGOC WORKED ON THE REST-->
+
+
+<html>
+
+<head>
+  <title>16 Personalities</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css?family=Kanit|Ubuntu&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css?family=Barlow+Condensed|Francois+One|Fredoka+One|Lobster+Two|Poiret+One|Sacramento&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body style="background-color: rgb(69, 121, 166)">
+
+  <!-- Navbar -->
+  <div class="nav-bar">
+    <a href="../">Home</a>
+    <a href="../">User view</a>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <h1 class="title" style="font-family: 'Montserrat', cursive">Data Manager</h1>
+    
+  </header>
+  <div>
+    <select onchange="getModel(this)" id="first-choice">
+      <option selected value="-1">All characters</option>
+      <option value="0">1st character</option>
+      <option value="1">2nd character</option>
+      <option value="2">3rd character</option>
+      <option value="3">4th character</option>
+    </select>
+  </div>
+  <main role="main">
+    <section class="sec-boxes" role="section">
+      <adrticle class="box">
+        <h2>Old Data Evaluation Result</h2>
+        <div class="container">
+      
+
+          {% for model in oldEval %}
+          <div class="evalModel{{ forloop.counter }}">
+            <table class="table table-striped libs">
+              <thead>
+                <tr>
+                  <th scope="col1">Character</th>
+                  <th scope="col2">Precision</th>
+                  <th scope="col3">Recall</th>
+                  <th scope="col4">F1 Score</th>
+                  <th scope="col5">Support</th>
+                </tr>
+              </thead>
+              {% for k, o in model.items %}
+              <tbody>
+                <tr class="{% cycle 'col1' 'col2' 'col3' 'col4' 'col5' %}">
+                  <td>{{o.character}}</td>
+                  <td>{{o.precision|floatformat:2}}</td>
+                  <td>{{o.recall|floatformat:2}}</td>
+                  <td>{{o.f1score|floatformat:2}}</td>
+                  <td>{{o.support}}</td>
+                </tr>
+              </tbody>
+              {% endfor %}
+            </table>
+          </div>
+          {% endfor %}
+        </div>
+      </adrticle>
+      <adrticle class="box">
+        <h2>New Data Evaluation Result</h2>
+        <div class="container">
+          <div>
+            
+          </div>
+
+          {% for model in newEval %}
+          <div class="evalModel{{ forloop.counter }}">
+            <table class="table table-striped libs">
+              <thead>
+                <tr>
+                  <th scope="col1">Character</th>
+                  <th scope="col2">Precision</th>
+                  <th scope="col3">Recall</th>
+                  <th scope="col4">F1 Score</th>
+                  <th scope="col5">Support</th>
+                </tr>
+              </thead>
+              {% for k, o in model.items %}
+              <tbody>
+                <tr class="{% cycle 'col1' 'col2' 'col3' 'col4' 'col5' %}">
+                  <td>{{o.character}}</td>
+                  <td>{{o.precision|floatformat:2}}</td>
+                  <td>{{o.recall|floatformat:2}}</td>
+                  <td>{{o.f1score|floatformat:2}}</td>
+                  <td>{{o.support}}</td>
+                </tr>
+              </tbody>
+              {% endfor %}
+            </table>
+          </div>
+          {% endfor %}
+        </div>
+      </adrticle>
+    </section>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+          <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <div class="container "> 
+        <img src="https://i.pinimg.com/originals/f6/d8/66/f6d866fa869471275458c8a84c1b1ca0.gif" alt="" width=250 >
+          <div class="eval">
+            <div class="eval-txt">
+                  <h3>Dataset is too old?</h3>
+                  <p>Re-train your model by feeding your trainer with new data! 
+                      Upload a new .csv file here <input type="file" name ="myfile" form = "formid"></p>
+                      <p>Recommended: Evaluate your model before training by inputting your new data! 
+                          Upload a new .csv file here <input type="file" name ="myfile" form = "formid2"></p>
+                          <div>
+                              <div style="float:right; width:50%;"></div>
+                          <div class="forms" style="float:right; width:50%;">
+                           
+                            <div class="form" style="float: left;">
+                                <form id="formid" method="post" enctype="multipart/form-data">
+                                  <button type="submit" style="float:right" class="btn btn-info">Re-train</button>
+                                </form>
+                            </div>
+
+                             <div class="form" style="float: right;">
+                                <form id="formid2" action="{%url 'prediction:Admin Evaluate'%}" method="post" enctype="multipart/form-data">
+                               
+                                  <button type="submit"  style="float:right" class="btn btn-info">Evaluate</button>
+                                  </form>
+                             </div>
+                              
+                          </div>
+                          </div>
+              </div>
+          </div>
+          <br><br><br><br><br><br>
+    </div>
+    <br><br><br><br><br><br><br>
+  </main>
+  <style>
+      .forms{
+        width: 60%;
+      }
+      .form{
+        width:50%;
+      }
+      .eval-txt{
+        margin: auto;
+        padding: 3px;
+        width: 80%;
+        
+      }
+      .eval{
+        height: 37vh;
+        width: 73%;
+        float: right;
+        background-color: rgb(224, 230, 235);
+      }
+      section {
+      margin: 1em 0;
+    }
+    
+    section h2 {
+      text-transform: uppercase;
+    }
+    
+    hr {
+      border-color: #d3d3d3;
+      border-style: dashed;
+    }
+    
+    .vertical {
+      width: 0;
+      height: 10px;
+    }
+    .table {
+      width: 100%;
+      border: 1px solid #EEEEEE;
+    }
+    
+    .table-header {
+      display: flex;
+      width: 100%;
+      background: #000;
+      padding: 18px 0;
+    }
+    
+    .table-row {
+      display: flex;
+      width: 100%;
+      padding: 18px 0;
+    }
+    .table-row:nth-of-type(odd) {
+      background: #EEEEEE;
+    }
+    
+    .table-data, .header__item {
+      flex: 1 1 20%;
+      text-align: center;
+    }
+    .sec-intro {
+      position: relative;
+    }
+    
+    .sec-intro img {
+      width: 100%;
+    }
+    .libs{
+      background-color: rgb(220, 222, 226);
+      width: 90%;
+      float: center;
+    }
+    .sec-intro h2 {
+      position: absolute;
+      bottom: .5em;
+      left: .5em;
+      padding: .5em;
+      background: rgba(0, 0, 0, 0.5);
+      color: #fff;
+    }
+      .box {
+      float: left;
+      padding: 1.5em 1em;
+      width: 50%;
+      height: 120vh;
+    
+      border-top: 0.1em solid #f5f5f550;
+      border-bottom: 0.1em solid #f5f5f550;
+      border-left: 0.1em solid #f5f5f550;
+    
+    }
+    .box:focus, .box:hover {
+      background-color: #f5f5f550;
+    }
+    .box:focus h2, .box:hover h2{
+      color: rgb(236, 240, 243);
+    }
+    .box:last-child {
+      border-right: 0.1em solid #f5f5f550;
+    }
+    
+    .box h2 {
+      text-align: center;
+      color: rgb(224, 224, 233);
+    }
+    
+    .box p {
+      margin-top: 4em;
+      height: 6em;
+      text-align: justify;
+    }
+    
+    .box .button {
+      margin: 4em auto;
+    }
+      .vertical {
+        width: 0;
+        height: 10px;
+      }
+        .footer{
+            top: 71%;
+            left: 16%;
+            position: absolute;
+        }
+          h3{
+                padding-top: 1%;
+                font-family: 'Francois One', sans-serif;
+              }
+        p{
+    
+        }
+    
+             .info{
+                background-color: rgb(229,229,229);
+                padding: 2em;
+                width: 45em;
+                top: 30%;
+            left: 17%;
+            
+            position: absolute;
+            
+    
+              }
+            .title{
+                text-align: center;
+                padding: 10px 20px;
+    
+            }
+            .nav-bar {
+              background-color: rgba(216, 216, 216, 0);
+              overflow: hidden;
+          }
+    
+                /* Style the links inside the navigation bar */
+          .nav-bar a {
+            float: left;
+            color: rgb(255, 255, 255);
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+            font-family: 'Ubuntu', sans-serif;
+          }
+          .nav-bar a:hover {
+            text-decoration: line-through;
+            color: rgb(255, 255, 255);
+          }
+          .centered {
+            text-align: center;
+            position: absolute;
+            font-family: 'Kanit', sans-serif;
+            top: 70%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: 'Ubuntu', sans-serif;
+            color: rgb(18, 17, 20);
+          }
+          .center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+          }
+  </style>
+
+  <script>
+    function getModel(selectedModel) {
+      var value = selectedModel.value;
+      var model1 = document.getElementsByClassName("evalModel1");
+      for (var i = 0; i < model1.length; ++i) {
+        var x1 = model1[i];
+        if (value == 0 || value == -1) {
+          x1.style.display = "block";
+        } else {
+          x1.style.display = "none";
+        }
+      }
+      var model2 = document.getElementsByClassName("evalModel2");
+      for (var i = 0; i < model2.length; ++i) {
+        var x2 = model2[i];
+        if (value == 1 || value == -1) {
+          x2.style.display = "block";
+        } else {
+          x2.style.display = "none";
+        }
+      }
+      var model3 = document.getElementsByClassName("evalModel3");
+      for (var i = 0; i < model3.length; ++i) {
+        var x3 = model3[i];
+        if (value == 2 || value == -1) {
+          x3.style.display = "block";
+        } else {
+          x3.style.display = "none";
+        }
+      }
+      var model4 = document.getElementsByClassName("evalModel4");
+      for (var i = 0; i < model4.length; ++i) {
+        var x4 = model4[i];
+        if (value == 3 || value == -1) {
+          x4.style.display = "block";
+        } else {
+          x4.style.display = "none";
+        }
+      }
+    }
+  </script>

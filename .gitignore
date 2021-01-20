@@ -1,0 +1,202 @@
+# Files that will be ignored
+/*.zip
+/*.vs
+/*.idea
+/*.txt
+/*.csv
+/*.sav
+*migrations/
+prediction/migrations
+
+/*.vscode
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+#  Usually these files are written by a python script from a template
+#  before PyInstaller builds the exe, so as to inject date/other infos into it.
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Scrapy stuff:
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# pipenv
+#   According to pypa/pipenv#598, it is recommended to include Pipfile.lock in version control.
+#   However, in case of collaboration, if having platform-specific dependencies or dependencies
+#   having no cross-platform support, pipenv may install dependencies that don't work, or not
+#   install all needed dependencies.
+#Pipfile.lock
+
+# pyflow
+__pypackages__/
+
+# Celery stuff
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+web-app/mbti_web/prediction/system/data/system/wiki-news-300d-1M.vec
+web-app/mbti_web/prediction/system/mbti-type/model_0.sav
+web-app/mbti_web/prediction/system/mbti-type/model_2.sav
+web-app/mbti_web/prediction/system/mbti-type/model_1.sav
+web-app/mbti_web/prediction/system/mbti-type/model_3.sav
+web-app/mbti_web/prediction/system/data/system/weights.best.hdf5
+web-app/mbti_web/db.mbti
+web-app/mbti_web/model_0.sav
+web-app/mbti_web/model_1.sav
+web-app/mbti_web/model_2.sav
+web-app/mbti_web/model_3.sav
+web-app/mbti_web/tokenizer.pickle
+web-app/mbti_web/weights_0.best.hdf5
+web-app/mbti_web/weights_1.best.hdf5
+web-app/mbti_web/weights_2.best.hdf5
+web-app/mbti_web/weights_3.best.hdf5
+web-app/mbti_web/prediction/system/wiki-news-300d-1M.vec
+web-app/mbti_web/prediction/system/wiki-news-300d-1M.vec.zip
+web-app/mbti_web/.vscode/settings.json
+web-app/mbti_web/prediction/system/data/model_0.sav
+web-app/mbti_web/prediction/system/data/model_1.sav
+web-app/mbti_web/prediction/system/data/model_2.sav
+web-app/mbti_web/prediction/system/data/model_3.sav
+web-app/mbti_web/prediction/system/data/tokenizer.pickle
+web-app/mbti_web/prediction/system/data/wiki-news-300d-1M.vec
+web-app/mbti_web/prediction/system/data/weights_0.best.hdf5
+web-app/mbti_web/prediction/system/data/weights_1.best.hdf5
+web-app/mbti_web/prediction/system/data/weights_2.best.hdf5
+web-app/mbti_web/prediction/system/data/weights_3.best.hdf5
+web-app/mbti_web/prediction/system/data/data.zip
+COPY/*
+web-app/mbti_web/prediction/system/data/model/Jan-04_15_59_41/0.sav
+web-app/mbti_web/prediction/system/data/model/Jan-04_15_59_41/1.sav
+web-app/mbti_web/prediction/system/data/model/Jan-04_15_59_41/2.sav
+web-app/mbti_web/prediction/system/data/model/Jan-04_15_59_41/3.sav
+web-app/mbti_web/prediction/system/data/model/Jan-04_15_59_41/tokenizer.pickle
+web-app/mbti_web/prediction/system/data/model/Jan-04_15_59_41/weights_0.best.hdf5
+web-app/mbti_web/prediction/system/data/model/Jan-04_15_59_41/weights_1.best.hdf5
+web-app/mbti_web/prediction/system/data/model/Jan-04_15_59_41/weights_2.best.hdf5
+web-app/mbti_web/prediction/system/data/model/Jan-04_15_59_41/weights_3.best.hdf5
+web-app/mbti_web/prediction/system/test_files/size40.csv
+web-app/mbti_web/prediction/system/test_files/size60.csv
+web-app/mbti_web/prediction/system/test_files/size100.csv
+web-app/mbti_web/prediction/system/test_files/size100.csv
+web-app/mbti_web/prediction/system/data/model/Jan-05_19_28_52/0.sav
+web-app/mbti_web/prediction/system/data/model/Jan-05_19_28_52/1.sav
+web-app/mbti_web/prediction/system/data/model/Jan-05_19_28_52/2.sav
+web-app/mbti_web/prediction/system/data/model/Jan-05_19_28_52/3.sav
+web-app/mbti_web/prediction/system/data/model/Jan-05_19_28_52/tokenizer.pickle
+web-app/mbti_web/prediction/system/data/model/Jan-05_19_28_52/weights_0.best.hdf5
+web-app/mbti_web/prediction/system/data/model/Jan-05_19_28_52/weights_1.best.hdf5
+web-app/mbti_web/prediction/system/data/model/Jan-05_19_28_52/weights_2.best.hdf5
+web-app/mbti_web/prediction/system/data/model/Jan-05_19_28_52/weights_3.best.hdf5
+web-app/mbti_web/prediction/system/data/model/Jan-05_19_34_47/0.sav
+web-app/mbti_web/prediction/system/data/model/Jan-05_19_34_47/1.sav
+web-app/mbti_web/prediction/system/data/model/Jan-05_19_34_47/2.sav
+web-app/mbti_web/prediction/system/data/model/Jan-05_19_34_47/3.sav
+web-app/mbti_web/prediction/system/data/model/Jan-05_19_34_47/tokenizer.pickle
+web-app/mbti_web/prediction/system/data/model/Jan-05_19_34_47/weights_1.best.hdf5
+web-app/mbti_web/prediction/system/data/model/Jan-05_19_34_47/weights_0.best.hdf5
+web-app/mbti_web/prediction/system/data/model/Jan-05_19_34_47/weights_2.best.hdf5
+web-app/mbti_web/prediction/system/data/model/Jan-05_19_34_47/weights_3.best.hdf5

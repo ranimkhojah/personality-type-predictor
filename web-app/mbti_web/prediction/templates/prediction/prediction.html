@@ -1,0 +1,295 @@
+{% load static from staticfiles %}
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://unpkg.com/vuex"></script>
+  <title>16 Personalities</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css?family=Kanit|Ubuntu&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">  
+  <link
+    href="https://fonts.googleapis.com/css?family=Barlow+Condensed|Open+Sans|Montserrat|Alata|Cabin+Conden|Francois+One|Hind+Madurai|Fredoka+One|Lobster+Two|Poiret+One|Sacramento&display=swap"
+    rel="stylesheet">
+</head>
+
+<body style="background-color: rgb(201, 200, 197)">
+<div class="tria">
+  <!-- Navbar -->
+  <div class="nav-bar">
+    <a href="../prediction">My Personality</a>
+    <a href="../admin">Admin view</a>
+  </div>
+</div>
+  <!-- Header -->
+  <header>
+  </br> </br> </br> 
+    <h1 class="title" style="font-family: 'Montserrat', cursive">Your MBTI Type is: {{mbti_type}}</h1>
+  </br></br>
+  </header>
+
+  <div class="container-fluid cont-center">
+    <div class="info">{{introduction}}
+    </div>
+  </div>
+  <div class="container details" style="width: 55%; margin: auto;">
+      <h1 class="title" style="font-family: 'Montserrat', cursive">More details</h1>
+    <div class="container bars-party">
+    </br></br>
+    <span style="text-align: center;"><p class= "details-labels" style = "float:left; width:50%; color: rgb(64, 148, 216)">{{I_percentage}}% INTROVERSION</p> <p class= "details-labels" style="color:rgb(100, 138, 31)">{{E_percentage}}% EXTROVERSION</p>
+    </span>
+      <div style="background-color: rgb(135, 173, 72);" class="myProgress progress-bar progress-bar-striped progress-bar-success">  <div id="EI" class="progress-bar progress-bar-striped active" role="progressbar"
+        aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
+    </br></br></br></br>  
+    <span style="text-align: center;"><p class= "details-labels" style = "float:left; width:50%; color: rgb(67, 150, 139)">{{N_percentage}}% INTUITION</p><p  class= "details-labels" style="color: rgb(115, 76, 128)">{{S_percentage}}% SENSING</p>
+    </span>
+      <div style="background-color: rgb(130, 82, 146);" class="myProgress progress-bar progress-bar-striped ">
+        <div id="NS" class="progress-bar progress-bar-striped " role="progressbar" aria-valuemin="0" aria-valuemax="100" style="background-color: rgb(70, 196, 179)"></div>
+      </div>
+    </br></br></br></br>
+    <span style="text-align: center;"><p class= "details-labels" style = "float:left;width:50%; color: rgb(197, 79, 79)">{{F_percentage}}% FEELING</p><p  class= "details-labels" style="color: rgb(204, 174, 77)">{{T_percentage}}% THINKING</p>
+    </span>
+      <div class="myProgress progress-bar progress-bar-striped progress-bar-warning" style="background-color:  rgb(211, 173, 47)">
+        <div id="FT" class="progress-bar progress-bar-striped " role="progressbar" aria-valuemin="0" aria-valuemax="100" style="background-color: rgb(211, 73, 73)"></div>
+      </div>
+    </br></br>    </br></br>
+    <span style="text-align: center;"><p class= "details-labels" style = "float:left;width:50%; color: rgb(177, 92, 163)">{{P_percentage}}% PERCEIVING</p><p  class= "details-labels" style="color: rgb(103, 125, 172)">{{J_percentage}}% JUDGING</p>
+    </span>
+      <div class="myProgress progress-bar progress-bar-striped" style="background-color: rgb(122, 147, 201)">
+        <div id="JP" class="progress-bar progress-bar-striped " style="background-color:  rgb(185, 117, 174)" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
+    </br></br>    </br></br>
+  </div>
+</div>
+</br></br>    </br></br> </br></br>
+<h1 class="title" style="font-family: 'Montserrat', cursive">Who is also an {{mbti_type}}?</h1>
+</br></br> </br>
+<div class="similar-ppl">
+    <div class="gallery">
+        <img src="data:image/png;base64,{{person1image}}" />
+        <div id="txt1" class="desc">{{person1name}}</div>
+
+      </div>
+    <div class="gallery">
+          <img src="data:image/png;base64,{{person2image}}">
+          <div id="txt2" class="desc">{{person2name}}</div>
+        </div>
+      <div class="gallery">
+          <img src="data:image/png;base64,{{person3image}}">
+          <div id="txt3" class="desc">{{person3name}}</div>
+        </div>
+      <div class="gallery">
+          <img src="data:image/png;base64,{{person4image}}">
+          <div id="txt4" class="desc">{{person4name}}</div>
+          <br><br><br><br><br><br><br><br>
+        </div>
+        <br><br><br><br><br><br>
+</div>
+
+
+  </div>
+  
+</body>
+
+
+
+  <style>
+    .rate{
+      text-align: center;
+      margin: auto;
+      width: 60%;
+    }
+    .emoji {
+	font-size: 50px;
+  margin: auto;
+  width: 50%;
+}
+    .similar-ppl{
+      margin: auto;
+      align-items: center;
+      position: inherit;
+      width: 58%;
+    }
+    .gallery {
+      margin: 8px;
+  border: 1px solid #ccc;
+  float: left;
+  width: 180px;
+}
+
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+  background-color: rgb(236, 234, 234);
+}
+    .details-labels{
+      font-family: 'Hind Madurai', sans-serif;
+      font-size: 25px;
+    }
+    .cont-center{
+      
+    min-height: 69vh; 
+    margin: auto;
+    display: flex;
+    align-items: center;
+
+    }
+    .myProgress {
+      width: 50%;
+      background-color: #ddd;
+      left: 25%;
+      position:absolute;
+    }
+
+    #EI {
+      width: 1%;
+      height: 30px;
+      background-color: rgb(61, 140, 206);
+      display: flex;
+      align-items: center;
+
+    }
+    #NS {
+      width: 1%;
+      height: 30px;
+      background-color: rgb(61, 140, 206);
+      display: flex;
+      align-items: center;
+
+    }
+    #FT {
+      width: 1%;
+      height: 30px;
+      background-color: rgb(61, 140, 206);
+      display: flex;
+      align-items: center;
+
+    }
+    #JP {
+      width: 1%;
+      height: 30px;
+      background-color: rgb(61, 140, 206);
+      display: flex;
+      align-items: center;
+    }
+    p {
+      font-family: 'Barlow Condensed', sans-serif;
+
+    }
+    .tria{
+
+      background: 
+    linear-gradient(to bottom right, #468eaf 50%, transparent 50.5%) no-repeat bottom,
+    /* bottom part */
+    linear-gradient(0deg, #468eaf, #468eaf) no-repeat top;
+  /* top portion */
+  color: white;
+  padding-bottom: 3em;
+  background-size: 100% 7em, 100% calc(100% - 7em)
+    }
+
+    .info {
+      background-color: rgb(229, 229, 229);
+      padding: 3em;
+      width: 50em;
+      top: 40%;
+      left: 15%;
+      position:absolute;
+      font-size: 20px;
+
+    }
+
+    .title {
+      font-family: 'Ubuntu', sans-serif;
+      text-align: center;
+      padding: 10px 20px;
+      width: 100%;
+
+    }
+
+    .nav-bar {
+      background-color: rgba(216, 216, 216, 0);
+      overflow: hidden;
+    }
+
+    /* Style the links inside the navigation bar */
+    .nav-bar a {
+      float: left;
+      color: rgb(255, 255, 255);
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+      font-family: 'Ubuntu', sans-serif;
+    }
+
+    .nav-bar a:hover {
+      text-decoration: line-through;
+      color: rgb(255, 255, 255);
+    }
+
+    .centered {
+      text-align: center;
+      position: absolute;
+      font-family: 'Kanit', sans-serif;
+      top: 70%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: 'Ubuntu', sans-serif;
+      color: rgb(18, 17, 20);
+    }
+
+    .center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  </style>
+  <script>
+      //BAR Extro-Intro
+        var EI = document.getElementById("EI");
+        var width_EI = "{{I_percentage}}";
+        var final_width_EI = width_EI;
+        if (width_EI < 50){
+          final_width_EI = 100 - width_EI;
+        }
+        console.log(final_width_EI)
+        EI.style.width = width_EI + "%";
+      //BAR Intui-Obs
+      var NS = document.getElementById("NS");
+        var width_NS = "{{N_percentage}}" ;
+        var final_width_NS = width_NS;
+        if (width_NS < 50){
+          final_width_NS = 100 - width_NS;
+        }
+        console.log(final_width_NS)
+        NS.style.width = width_NS + "%";
+      //BAR Feeling-Thinking
+      var FT = document.getElementById("FT");
+        var width_FT = "{{F_percentage}}" ;
+        var final_width_FT = width_FT;
+        if (width_FT < 50){
+          final_width_FT = 100 - width_FT;
+        }
+        console.log(final_width_FT)
+        FT.style.width = width_FT + "%";
+      //BAR Judge-perc
+      var JP = document.getElementById("JP");
+        var width_JP = "{{P_percentage}}"  ;
+        var final_width_JP = width_JP;
+        if (width_JP < 50){
+          final_width_JP = 100 - width_JP;
+        }
+        console.log(final_width_JP)
+        JP.style.width = width_JP + "%";
+    </script>

@@ -1,0 +1,4 @@
+ID,Given Name,Family Name,Sex,IsSingle,Employee ID,Age,YearsEmployed,Salary
+1,Gerald,Hampton,Male,true,2582GABK,35,3,55000
+2,Ann,Smith,Other,true,7951WVLW,43,10,70000
+3,Carla,Johnson,Female,false,7758NSID,25,7,40000

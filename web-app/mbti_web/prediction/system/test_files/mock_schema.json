@@ -1,0 +1,48 @@
+{
+    "fields": [
+        {
+            "name": "ID",
+            "type": "string",
+            "format": "default"
+        },
+        {
+            "name": "Given Name",
+            "type": "boolean",
+            "format": "default"
+        },
+
+        {
+            "name": "Sex",
+            "type": "string",
+            "format": "default"
+        },
+        {
+            "name": "Is Single",
+            "type": "boolean",
+            "format": "default"
+        },
+        {
+            "name": "Employee ID",
+            "type": "string",
+            "format": "default"
+        },
+        {
+            "name": "Age",
+            "type": "integer",
+            "format": "default"
+        },
+        {
+            "name": "YearsEmployed",
+            "type": "integer",
+            "format": "default"
+        },
+        {
+            "name": "Salary",
+            "type": "integer",
+            "format": "default"
+        }
+    ],
+    "missingValues": [
+        ""
+    ]
+}

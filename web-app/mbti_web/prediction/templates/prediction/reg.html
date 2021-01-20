@@ -1,0 +1,105 @@
+
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>16 Personalities</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link href="https://fonts.googleapis.com/css?family=Kanit|Ubuntu&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed|Francois+One|Fredoka+One|Lobster+Two|Poiret+One|Sacramento&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    </head>
+    <body style="background-color:  rgb(132, 169, 190)">
+
+        <!-- Navbar -->
+        <div class="nav-bar">
+            <a href="./">Home</a>
+            <a href="../">Log In</a>
+        </div>
+        {% load crispy_forms_tags %}
+
+        <div class="jumbotron centered">
+                <form method='POST'>
+                    {% csrf_token %}
+                    <fieldset class="form-group">
+                            <legend class="border-bottom mb-4">Join us!</legend>
+                            <p class="lead grey">Enter your personal information here</p>
+                            {{ form|crispy }}
+                        </fieldset>
+                        <div class="form-group">
+                            <button type="submit" style="float:right" class="btn btn-info">Get started</button>
+                        </div>
+                    </form>
+                    <div class="border-top pt-3">
+                        <small class="text-muted">
+                            Already Have An Account? <a class="ml-2" href="#">Sign In</a>
+                        </small> 
+                        
+                </form>
+              </div>
+
+<style>
+    p{
+        font-family: 'Barlow Condensed', sans-serif;
+
+    }
+    .grey{
+        color: grey;
+    }
+    .container{
+        width: 50em;
+        height:30em;
+
+    }
+         .info{
+            background-color: rgb(229,229,229);
+            padding: 3em;
+            width: 50em;
+            top: 40%;
+        left: 10%;
+        position: absolute;
+        
+
+          }
+        .title{
+            font-family: 'Ubuntu', sans-serif;
+            text-align: center;
+            padding: 10px 20px;
+
+        }
+        .nav-bar {
+          background-color: rgba(216, 216, 216, 0);
+          overflow: hidden;
+      }
+
+            /* Style the links inside the navigation bar */
+      .nav-bar a {
+        float: left;
+        color: rgb(255, 255, 255);
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+        font-family: 'Ubuntu', sans-serif;
+      }
+      .nav-bar a:hover {
+        text-decoration: line-through;
+        color: rgb(255, 255, 255);
+      }
+      .centered {
+        text-align: center;
+        position: absolute;
+        font-family: 'Kanit', sans-serif;
+        top: 75%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-family: 'Ubuntu', sans-serif;
+        color: rgb(18, 17, 20);
+      }
+      .center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+</style>
